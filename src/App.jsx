@@ -30,9 +30,8 @@ const App = () => {
     setItems(delItem);
   }
 
-  function handleEdit(id) {
-    const editItem = items.find((item) => item.id === id);
-    setVal(editItem.name);
+  function handleEdit(id,name) {
+    setVal(name);
     setEditId(id);
   }
 
@@ -47,7 +46,7 @@ const App = () => {
           <li key={item.id}>
             {item.name}
             <button onClick={() => handleDel(item.id)}>Delete</button>
-            <button onClick={() => handleEdit(item.id)}>Edit</button>
+            <button onClick={() => handleEdit(item.id,item.name)}>Edit</button>
           </li>
         ))}
       </ul>
